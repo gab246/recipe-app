@@ -21,3 +21,10 @@ class RecipesModelTest(TestCase):
     field_label = recipe._meta.get_field('cooking_time').verbose_name
     self.assertEqual(field_label, 'cooking time')
 
+  def test_get_absolute_url(self):
+    recipe = Recipes.objects.get(id=1)
+    self.assertEqual(recipe.get_absolute_url(), '/list/1')
+  
+  def test_difficulty_calculation(self):
+    recipe = Recipes.objects.get( id=1)
+    self.assertEqual(recipe.calculate_difficulty(), 'Hard')

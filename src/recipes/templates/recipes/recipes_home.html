@@ -1,9 +1,23 @@
 <!DOCTYPE html>
+
 <html>
-   <title>
-     Cook with Us!
-  </title>
-  <body>
-    RECIPES
+   
+   <head> 
+      <title>Cook with Us!</title>
+      {% load static %}
+      <style type="text/css">
+      body {
+            background: url("{% static 'recipes/images/homepage.jpg' %}") no-repeat fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 60px;
+        }
+        </style>
+   </head>
+   
+   <body>
+      <h1 >RECIPES</h1>
    </body>
 </html>
