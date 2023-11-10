@@ -1,16 +1,17 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 from .models import Recipes
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
 def home(request):
   return render(request, 'recipes/recipes_home.html')
 
-class RecipeListView(ListView):
+class RecipeListView(LoginRequiredMixin, ListView):
   model = Recipes
   template_name = 'recipes/main.html'
 
-class RecipeDetailView(DetailView):                       
-   model = Recipes                                     
-   template_name = 'recipes/detail.html' 
+class RecipeDetailView(LoginRequiredMixin, DetailView):                       
+  model = Recipes                                     
+  template_name = 'recipes/detail.html' 
