@@ -25,4 +25,5 @@ class Recipes(models.Model):
     return reverse ('recipes:detail', kwargs={'pk': self.pk})
 
   def __str__(self):
-    return str(self.name)
+    returnstring = f"name: {self.name}, description: {self.description}, cooking time: {self.cooking_time}, ingredients: {self.ingredients}"
+    return str(returnstring)

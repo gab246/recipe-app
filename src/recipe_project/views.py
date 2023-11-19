@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm  
 
 
+
 def login_view(request):                                
   error_message = None                             
   form = AuthenticationForm()  
@@ -30,4 +31,10 @@ def login_view(request):
 
 def logout_view(request):
   logout(request)
-  return render(request, 'auth/success.html')     
+  return render(request, 'auth/success.html')    
+
+def search_view(request):
+  search(request)
+  return render(request, 'recipes/search.html' )
+
+
