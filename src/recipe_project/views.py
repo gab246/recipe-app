@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect  
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login, logout 
 from django.contrib.auth.forms import AuthenticationForm  
 
 
@@ -36,5 +36,9 @@ def logout_view(request):
 def search_view(request):
   search(request)
   return render(request, 'recipes/search.html' )
+
+def aboutMe_view(request):
+  aboutMe(request)
+  return render(request, 'recipes/about_me.html')
 
 
